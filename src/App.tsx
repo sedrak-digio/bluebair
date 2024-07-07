@@ -1,30 +1,23 @@
 import "@mantine/core/styles.css";
-import { Button, Container, LoadingOverlay, MantineProvider, Stack, Text } from "@mantine/core";
+import { Container, LoadingOverlay, MantineProvider, Stack } from "@mantine/core";
 import { theme } from "./theme";
-import { useState } from "react";
+import QuizGame from "./components/Game";
 
 export default function App() {
-  
-  const [loading, setLoading] = useState(false);
-  const [counter, setCounter] = useState('-');
-
-  const incrementCounter = async () => {
-    setLoading(true)
-    const response = await (await fetch(`/api/counter`)).json()
-    setCounter(response.counterValue);
-    setLoading(false)
-  }
-
 
   return <MantineProvider theme={theme}>
 
     <Container>
-      <LoadingOverlay visible={loading} zIndex={1000} overlayProps={{ radius: "sm", blur: 2 }} />
+      <LoadingOverlay zIndex={1000} overlayProps={{ radius: "sm", blur: 2 }} />
       <Stack p={"lg"} gap={'xl'}>
-        <Text>Bam! 😄</Text>
+        {/* <Text>Bam! 😄</Text>
         <Text>Count: {counter}</Text>
-        <Button onClick={incrementCounter}>Increment Counter</Button>
+        <Button onClick={incrementCounter}>Increment Counter</Button> */}
+      
+        <QuizGame />
+
       </Stack>
+
     </Container>
 
   </MantineProvider>;
