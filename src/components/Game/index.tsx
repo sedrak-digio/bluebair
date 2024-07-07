@@ -63,7 +63,7 @@ export default function QuizGame() {
 
       <SimpleGrid cols={2}>
         <Button onClick={() => selectTruthQuestion('Truth')}>Truth</Button>
-        <Button onClick={() => selectTruthQuestion('Juicy Truth')}>Juicy truth 🔥</Button>
+        <Button variant="outline" onClick={() => selectTruthQuestion('Juicy Truth')}>Juicy truth 🔥</Button>
       </SimpleGrid>
     </Stack>
   }
